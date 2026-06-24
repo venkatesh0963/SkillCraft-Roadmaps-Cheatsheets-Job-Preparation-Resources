@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comprehensive HTML5 Cheatsheet for developers. Quick reference for HTML tags, attributes, document structure, forms, and semantic elements.">
+<meta name="keywords" content="HTML5 Cheatsheet, HTML tags, Web Development, Frontend, SkillCraft, HTML reference, coding cheatsheet">
+<meta name="author" content="SkillCraft">
+<title>HTML5 Cheatsheet - Ultimate Reference Guide | SkillCraft</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --bg-color: #fdfbf7;
+    --text-color: #0f172a;
+    --primary-color: #ff90e8;
+    --secondary-color: #ffc900;
+    --tertiary-color: #23a094;
+    --card-bg: #ffffff;
+    --border-color: #0f172a;
+    --border-width: 3px;
+    --shadow-offset: 5px;
+    --shadow-color: #0f172a;
+    --dot-color: rgba(15, 23, 42, 0.15);
+    --transition: all 0.2s ease-in-out;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1b26;
+    --text-color: #e0e0e0;
+    --primary-color: #bb66a8;
+    --secondary-color: #bfa31b;
+    --tertiary-color: #196f66;
+    --card-bg: #24283b;
+    --border-color: #e0e0e0;
+    --shadow-color: #e0e0e0;
+    --dot-color: rgba(224, 224, 224, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
+    background-size: 25px 25px;
+    background-position: 0 0;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--bg-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    transition: background 0.3s;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: #0f172a;
+    border-color: #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+}
+
+#themeToggle {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: var(--transition);
+}
+
+#themeToggle:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+/* Sections */
+.section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0;
+    background-color: transparent;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h1, .section-title h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    background: var(--primary-color);
+    color: #0f172a;
+    padding: 15px 30px;
+    border: var(--border-width) solid #0f172a;
+    box-shadow: 8px 8px 0px #0f172a;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px #ffffff;
+}
+.section-title h2 {
+    font-size: 2.8rem;
+    background: var(--secondary-color);
+}
+.section-title p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--card-bg);
+    display: inline-block;
+    padding: 8px 15px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+/* Cheatsheet Grid */
+.cheatsheet-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.cheat-card {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    padding: 25px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+.cheat-card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--border-color);
+    border-radius: 50%;
+    color: #0f172a;
+    flex-shrink: 0;
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cheat-card ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.cheat-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border-bottom: 2px dashed rgba(15, 23, 42, 0.1);
+    padding-bottom: 8px;
+    gap: 15px;
+}
+
+[data-theme="dark"] .cheat-card li {
+    border-bottom: 2px dashed rgba(224, 224, 224, 0.1);
+}
+
+.cheat-card li span {
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+.cheat-card code {
+    background: var(--bg-color);
+    padding: 4px 8px;
+    border: 2px solid var(--border-color);
+    font-weight: 800;
+    color: #0f172a;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+[data-theme="dark"] .cheat-card code {
+    color: #ff90e8; /* Pinkish color for code in dark mode for visibility */
+}
+
+.cheat-card pre {
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    padding: 15px;
+    overflow-x: auto;
+    font-weight: 700;
+    margin-top: 15px;
+    box-shadow: inset 3px 3px 0px rgba(0,0,0,0.05);
+}
+
+.cheat-card pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+/* Colors for headers */
+.cheat-card:nth-child(1) .step-number { background: #a78bfa; }
+.cheat-card:nth-child(2) .step-number { background: #a78bfa; }
+.cheat-card:nth-child(3) .step-number { background: #4ade80; }
+.cheat-card:nth-child(4) .step-number { background: #fb923c; }
+.cheat-card:nth-child(5) .step-number { background: #60a5fa; }
+.cheat-card:nth-child(6) .step-number { background: #a78bfa; }
+.cheat-card:nth-child(7) .step-number { background: #2dd4bf; }
+.cheat-card:nth-child(8) .step-number { background: #f472b6; }
+.cheat-card:nth-child(9) .step-number { background: #fb923c; }
+.cheat-card:nth-child(10) .step-number { background: #60a5fa; }
+.cheat-card:nth-child(11) .step-number { background: #4ade80; }
+
+/* Features Grid (For About & Related Content) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    transition: var(--transition);
+}
+.feature-card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+.feature-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--secondary-color);
+}
+.feature-card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.feature-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #0f172a;
+    padding: 10px 20px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+.feature-link:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    padding: 80px 8% 40px;
+    border-top: var(--border-width) solid var(--border-color);
+    margin-top: 120px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+.footer-grid h3, .footer-grid h4 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+.footer-grid ul {
+    list-style: none;
+}
+.footer-grid li {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.footer-grid li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s;
+    background: var(--card-bg);
+    padding: 2px 8px;
+    border: 2px solid transparent;
+}
+.footer-grid li a:hover {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    box-shadow: 4px 4px 0px #0f172a;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.social-icons a:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: var(--border-width) solid var(--border-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--card-bg);
+    padding: 20px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+/* Scroll Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px #0f172a;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.2s;
+}
+#scrollTopBtn:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .section {
+        margin: 80px auto;
+    }
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        border-bottom: var(--border-width) solid var(--border-color);
+        padding: 20px 0;
+        box-shadow: 0 10px 0 var(--shadow-color);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .section {
+        margin: 60px auto;
+    }
+    .section-title h1 {
+        font-size: 2.8rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="skillcraft_neubrutalism.html" class="logo">
+        🚀 SkillCraft
+    </a>
+
+    <div class="nav-right">
+        <nav class="nav-links">
+            <a href="skillcraft_neubrutalism.html#home">Home</a>
+            <a href="skillcraft_neubrutalism.html#roadmaps">Roadmaps</a>
+            <a href="skillcraft_neubrutalism.html#cheatsheets">Cheatsheets</a>
+            <a href="skillcraft_neubrutalism.html#jobprep">Job Prep</a>
+            <a href="skillcraft_neubrutalism.html#about-website">About</a>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <section class="section">
+        <div class="section-title">
+            <h1>HTML5 Cheatsheet</h1>
+            <p>Your ultimate quick-reference guide for all essential HTML tags and attributes.</p>
+        </div>
+        
+        <div class="cheatsheet-grid">
+            
+            <!-- 1. Document Structure -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">1</span>
+                    <h3>Document Structure</h3>
+                </div>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code> <span>Declares HTML5</span></li>
+                    <li><code>&lt;html&gt;</code> <span>Root element</span></li>
+                    <li><code>&lt;head&gt;</code> <span>Contains meta info</span></li>
+                    <li><code>&lt;title&gt;</code> <span>Page title</span></li>
+                    <li><code>&lt;body&gt;</code> <span>Visible content</span></li>
+                    <li><code>&lt;!-- --&gt;</code> <span>Comment</span></li>
+                </ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 2. Text Content -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">2</span>
+                    <h3>Text Content</h3>
+                </div>
+                <ul>
+                    <li><code>&lt;h1&gt; - &lt;h6&gt;</code> <span>Headings</span></li>
+                    <li><code>&lt;p&gt;</code> <span>Paragraph</span></li>
+                    <li><code>&lt;br&gt;</code> <span>Line break</span></li>
+                    <li><code>&lt;hr&gt;</code> <span>Thematic break</span></li>
+                    <li><code>&lt;strong&gt;</code> <span>Important text</span></li>
+                    <li><code>&lt;em&gt;</code> <span>Emphasized text</span></li>
+                    <li><code>&lt;small&gt;</code> <span>Smaller text</span></li>
+                    <li><code>&lt;mark&gt;</code> <span>Marked text</span></li>
+                    <li><code>&lt;sup&gt;</code> <span>Superscript</span></li>
+                    <li><code>&lt;sub&gt;</code> <span>Subscript</span></li>
+                    <li><code>&lt;blockquote&gt;</code> <span>Block quote</span></li>
+                    <li><code>&lt;code&gt;</code> <span>Inline code</span></li>
+                    <li><code>&lt;pre&gt;</code> <span>Preformatted text</span></li>
+                </ul>
+            </div>
+
+            <!-- 3. Links & Images -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">3</span>
+                    <h3>Links & Images</h3>
+                </div>
+                <ul>
+                    <li style="border:none; padding:0; margin:0; justify-content:center;"><strong>Links</strong></li>
+                    <li><code>&lt;a href=""&gt;</code> <span>Hyperlink</span></li>
+                    <li><code>href</code> <span>Destination URL</span></li>
+                    <li><code>target="_blank"</code> <span>Open in new tab</span></li>
+                    <li><code>title</code> <span>Additional info</span></li>
+                    
+                    <li style="border:none; padding-top:15px; margin:0; justify-content:center;"><strong>Images</strong></li>
+                    <li><code>&lt;img src=""&gt;</code> <span>Image tag</span></li>
+                    <li><code>src</code> <span>Image path</span></li>
+                    <li><code>alt</code> <span>Alternative text</span></li>
+                    <li><code>width / height</code> <span>Set dimensions</span></li>
+                </ul>
+            </div>
+
+            <!-- 4. Lists -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">4</span>
+                    <h3>Lists</h3>
+                </div>
+                <ul>
+                    <li style="border:none; padding:0; margin:0; justify-content:center;"><strong>Unordered List</strong></li>
+                    <li><code>&lt;ul&gt;</code> <span>List container</span></li>
+                    <li><code>&lt;li&gt;</code> <span>List item</span></li>
+                    
+                    <li style="border:none; padding-top:15px; margin:0; justify-content:center;"><strong>Ordered List</strong></li>
+                    <li><code>&lt;ol&gt;</code> <span>Numbered container</span></li>
+                    <li><code>&lt;li&gt;</code> <span>List item</span></li>
+
+                    <li style="border:none; padding-top:15px; margin:0; justify-content:center;"><strong>Description List</strong></li>
+                    <li><code>&lt;dl&gt;</code> <span>List container</span></li>
+                    <li><code>&lt;dt&gt;</code> <span>Term</span></li>
+                    <li><code>&lt;dd&gt;</code> <span>Description</span></li>
+                </ul>
+            </div>
+
+            <!-- 5. Tables -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">5</span>
+                    <h3>Tables</h3>
+                </div>
+                <ul>
+                    <li><code>&lt;table&gt;</code> <span>Table container</span></li>
+                    <li><code>&lt;tr&gt;</code> <span>Table row</span></li>
+                    <li><code>&lt;th&gt;</code> <span>Table header</span></li>
+                    <li><code>&lt;td&gt;</code> <span>Table data cell</span></li>
+                    <li><code>&lt;thead&gt;</code> <span>Header section</span></li>
+                    <li><code>&lt;tbody&gt;</code> <span>Body section</span></li>
+                    <li><code>&lt;tfoot&gt;</code> <span>Footer section</span></li>
+                </ul>
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <!-- 6. Forms -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">6</span>
+                    <h3>Forms</h3>
+                </div>
+                <ul>
+                    <li><code>&lt;form&gt;</code> <span>Form container</span></li>
+                    <li><code>&lt;label&gt;</code> <span>Input label</span></li>
+                    <li><code>&lt;input&gt;</code> <span>Input field</span></li>
+                    <li><code>&lt;textarea&gt;</code> <span>Multiline text</span></li>
+                    <li><code>&lt;select&gt;</code> <span>Dropdown menu</span></li>
+                    <li><code>&lt;button&gt;</code> <span>Clickable button</span></li>
+                </ul>
+<pre><code>&lt;form action="/submit"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name"&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <!-- 7. Semantic Elements (HTML5) -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">7</span>
+                    <h3>Semantic Elements</h3>
+                </div>
+                <ul>
+                    <li><code>&lt;header&gt;</code> <span>Header of section/page</span></li>
+                    <li><code>&lt;nav&gt;</code> <span>Navigation links</span></li>
+                    <li><code>&lt;main&gt;</code> <span>Main content area</span></li>
+                    <li><code>&lt;section&gt;</code> <span>Section in a document</span></li>
+                    <li><code>&lt;article&gt;</code> <span>Independent content</span></li>
+                    <li><code>&lt;aside&gt;</code> <span>Sidebar content</span></li>
+                    <li><code>&lt;footer&gt;</code> <span>Footer of section/page</span></li>
+                    <li><code>&lt;figure&gt;</code> <span>Self-contained content</span></li>
+                </ul>
+            </div>
+
+            <!-- 8. Media -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">8</span>
+                    <h3>Media</h3>
+                </div>
+                <ul>
+                    <li style="border:none; padding:0; margin:0; justify-content:center;"><strong>Audio</strong></li>
+                    <li><code>&lt;audio controls&gt;</code> <span>Audio player</span></li>
+                    <li><code>&lt;source&gt;</code> <span>Media resource path</span></li>
+                    
+                    <li style="border:none; padding-top:15px; margin:0; justify-content:center;"><strong>Video</strong></li>
+                    <li><code>&lt;video controls&gt;</code> <span>Video player</span></li>
+                    <li><code>width / height</code> <span>Set dimensions</span></li>
+                </ul>
+<pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+            </div>
+
+            <!-- 9. Important Attributes -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">9</span>
+                    <h3>Important Attributes</h3>
+                </div>
+                <ul>
+                    <li><code>id=""</code> <span>Unique identifier</span></li>
+                    <li><code>class=""</code> <span>CSS class (reusable)</span></li>
+                    <li><code>style=""</code> <span>Inline CSS</span></li>
+                    <li><code>title=""</code> <span>Extra info / tooltip</span></li>
+                    <li><code>lang=""</code> <span>Language of content</span></li>
+                    <li><code>hidden</code> <span>Hide element</span></li>
+                    <li><code>data-*=""</code> <span>Store custom data</span></li>
+                    <li><code>placeholder=""</code> <span>Hint in input field</span></li>
+                    <li><code>required</code> <span>Field is mandatory</span></li>
+                </ul>
+            </div>
+
+            <!-- 10. HTML Entities -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">10</span>
+                    <h3>HTML Entities</h3>
+                </div>
+                <ul>
+                    <li><code>&amp;lt;</code> <span>&lt; (Less than)</span></li>
+                    <li><code>&amp;gt;</code> <span>&gt; (Greater than)</span></li>
+                    <li><code>&amp;amp;</code> <span>&amp; (Ampersand)</span></li>
+                    <li><code>&amp;quot;</code> <span>" (Double quote)</span></li>
+                    <li><code>&amp;#39;</code> <span>' (Single quote)</span></li>
+                    <li><code>&amp;nbsp;</code> <span>Non-breaking space</span></li>
+                    <li><code>&amp;copy;</code> <span>&copy; (Copyright)</span></li>
+                    <li><code>&amp;reg;</code> <span>&reg; (Registered)</span></li>
+                </ul>
+            </div>
+
+            <!-- 11. Doctype Explained -->
+            <div class="cheat-card">
+                <div class="card-header">
+                    <span class="step-number">11</span>
+                    <h3>Doctype Explained</h3>
+                </div>
+                <p style="font-weight: 600; line-height: 1.6; margin-bottom: 15px;">
+                    The <code>&lt;!DOCTYPE html&gt;</code> declaration defines this document to be HTML5.
+                </p>
+                <p style="font-weight: 600; line-height: 1.6;">
+                    It must only appear once, at the very top of the page (before any HTML tags). It helps browsers render the page correctly in standards mode, preventing older quirks modes from activating.
+                </p>
+                <div style="font-size: 5rem; text-align: center; margin-top: 20px; color: #e34c26;">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT HTML SECTION -->
+    <section class="section" id="about-html">
+        <div class="section-title">
+            <h2>About HTML</h2>
+            <p>The foundation of every website on the internet.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🧱</div>
+                <h3>Building Blocks</h3>
+                <p>HTML (HyperText Markup Language) provides the fundamental structure of a webpage. It allows you to organize text, images, and other media elements logically for the browser to render.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🔍</div>
+                <h3>SEO & Accessibility</h3>
+                <p>Using the correct semantic tags (like <code>&lt;nav&gt;</code> or <code>&lt;article&gt;</code>) not only helps screen readers understand your layout, but also drastically boosts your search engine rankings.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🌐</div>
+                <h3>Universal Standard</h3>
+                <p>No matter what complex frameworks or backend technologies you use, every web application ultimately compiles down to HTML to be displayed in a user's browser.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED CHEATSHEETS -->
+    <section class="section" id="related-content">
+        <div class="section-title">
+            <h2>Related Cheatsheets</h2>
+            <p>Continue your learning journey with our other guides.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card" style="text-align: center;">
+                <i class="fa-brands fa-css3-alt" style="font-size: 4rem; color: #264de4; margin-bottom: 15px;"></i>
+                <h3>CSS3 Cheatsheet</h3>
+                <p>Master styling, flexbox, grid, and animations.</p>
+                <a href="#" class="feature-link" style="background: #ffc900;">View CSS Guide</a>
+            </div>
+            <div class="feature-card" style="text-align: center;">
+                <i class="fa-brands fa-js" style="font-size: 4rem; color: #f7df1e; margin-bottom: 15px;"></i>
+                <h3>JavaScript Guide</h3>
+                <p>Quick references for ES6+, DOM, and array methods.</p>
+                <a href="#" class="feature-link" style="background: #23a094;">View JS Guide</a>
+            </div>
+            <div class="feature-card" style="text-align: center;">
+                <i class="fa-brands fa-react" style="font-size: 4rem; color: #61dafb; margin-bottom: 15px;"></i>
+                <h3>React Hooks</h3>
+                <p>State, effects, context, and component lifecycle.</p>
+                <a href="#" class="feature-link" style="background: #ff90e8;">View React Guide</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>🚀 SkillCraft</h3>
+            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; background: var(--card-bg); padding: 10px; border: var(--border-width) solid var(--border-color); box-shadow: 3px 3px 0px var(--shadow-color);">
+                Structured roadmaps, cheatsheets, and career preparation resources designed in Neubrutalism style.
+            </p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/thecodecraft.dev" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="skillcraft_neubrutalism.html#home">Home</a></li>
+                <li><a href="skillcraft_neubrutalism.html#roadmaps">Roadmaps</a></li>
+                <li><a href="skillcraft_neubrutalism.html#cheatsheets">Cheatsheets</a></li>
+                <li><a href="skillcraft_neubrutalism.html#jobprep">Job Prep</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="https://venkatesh0963.github.io/codecraft-website/">Code Craft</a></li>
+                <li><a href="https://venkatesh0963.github.io/ui-craft/">Ui craft</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>Instagram</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 SkillCraft. All Rights Reserved. | Privacy Policy | Terms of Service | Cookie Policy
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('i');
+
+themeToggle.addEventListener('click', () => {
+    if (html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        html.setAttribute('data-theme', 'light');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'flex';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+</body>
+</html>

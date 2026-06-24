@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SkillCraft - Roadmaps, Cheatsheets & Job Preparation Resources">
+<title>SkillCraft </title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --bg-color: #fdfbf7;
+    --text-color: #0f172a;
+    --primary-color: #ff90e8;
+    --secondary-color: #ffc900;
+    --tertiary-color: #23a094;
+    --card-bg: #ffffff;
+    --border-color: #0f172a;
+    --border-width: 3px;
+    --shadow-offset: 5px;
+    --shadow-color: #0f172a;
+    --dot-color: rgba(15, 23, 42, 0.15);
+    --transition: all 0.2s ease-in-out;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1b26;
+    --text-color: #e0e0e0;
+    --primary-color: #bb66a8;
+    --secondary-color: #bfa31b;
+    --tertiary-color: #196f66;
+    --card-bg: #24283b;
+    --border-color: #e0e0e0;
+    --shadow-color: #e0e0e0;
+    --dot-color: rgba(224, 224, 224, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
+    background-size: 25px 25px;
+    background-position: 0 0;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--bg-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    transition: background 0.3s;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: #0f172a;
+    border-color: #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+}
+
+#themeToggle {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: var(--transition);
+}
+
+#themeToggle:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+/* Buttons */
+.btn {
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: var(--transition);
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.primary {
+    background: var(--primary-color);
+    border: var(--border-width) solid #0f172a;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #0f172a;
+}
+.secondary {
+    background: var(--secondary-color);
+    border: var(--border-width) solid #0f172a;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #0f172a;
+}
+.primary:hover, .secondary:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    background-color: transparent;
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0;
+}
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 4px 4px 0px var(--primary-color);
+}
+.hero p {
+    margin-bottom: 35px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: var(--card-bg);
+    padding: 15px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    background: var(--tertiary-color);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 10px 10px 0px var(--shadow-color);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+.hero-image img:hover {
+    transform: rotate(-2deg) scale(1.02);
+}
+
+/* Sections */
+.section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0;
+    background-color: transparent;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    background: var(--secondary-color);
+    color: #0f172a;
+    padding: 15px 30px;
+    border: var(--border-width) solid #0f172a;
+    box-shadow: 8px 8px 0px #0f172a;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px #ffffff;
+}
+.section-title p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--card-bg);
+    display: inline-block;
+    padding: 8px 15px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+/* Grids for cards */
+.features, .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    transition: var(--transition);
+}
+.feature-card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+.feature-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--secondary-color);
+}
+.feature-card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+.card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+.card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-weight: 600;
+}
+.card-btn {
+    background: var(--primary-color);
+    color: #0f172a;
+    border: 2px solid #0f172a;
+    padding: 12px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #0f172a;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.card-btn:hover {
+    box-shadow: 0px 0px 0px #0f172a;
+    transform: translate(3px, 3px);
+}
+
+/* About Website Section */
+.about-website {
+    background-color: transparent; 
+}
+.about-website .section-title h2 {
+    background: #fdfbf7;
+    color: #0f172a;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+.about-website .section-title p {
+    background: var(--secondary-color);
+    color: #0f172a;
+}
+.about-content {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 50px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 10px 10px 0px var(--shadow-color);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--secondary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.contact-info {
+    padding: 40px;
+    background: var(--secondary-color);
+    color: #0f172a;
+    border: var(--border-width) solid #0f172a;
+    box-shadow: 8px 8px 0px #0f172a;
+}
+.contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 3px 3px 0px #ffffff;
+}
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #0f172a;
+    box-shadow: 2px 2px 0px #0f172a;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 18px;
+    border: var(--border-width) solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 5px 5px 0px var(--shadow-color);
+    transition: var(--transition);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px var(--shadow-color);
+    transform: translate(5px, 5px);
+}
+.contact-form button {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    padding: 80px 8% 40px;
+    border-top: var(--border-width) solid var(--border-color);
+    margin-top: 120px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+.footer-grid h3, .footer-grid h4 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+.footer-grid ul {
+    list-style: none;
+}
+.footer-grid li {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.footer-grid li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s;
+    background: var(--card-bg);
+    padding: 2px 8px;
+    border: 2px solid transparent;
+}
+.footer-grid li a:hover {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    box-shadow: 4px 4px 0px #0f172a;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.social-icons a:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: var(--border-width) solid var(--border-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--card-bg);
+    padding: 20px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+/* Scroll Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px #0f172a;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.2s;
+}
+#scrollTopBtn:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .features, .grid, .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero, .section {
+        margin: 80px auto;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        border-bottom: var(--border-width) solid var(--border-color);
+        padding: 20px 0;
+        box-shadow: 0 10px 0 var(--shadow-color);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .hero, .section {
+        margin: 60px auto;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .features, .grid, .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .footer-grid {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="#" class="logo">
+        🚀 SkillCraft
+    </a>
+
+    <div class="nav-right">
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#roadmaps">Roadmaps</a>
+            <a href="#cheatsheets">Cheatsheets</a>
+            <a href="#jobprep">Job Prep</a>
+            <a href="#about-website">About</a>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Master Skills.<br>Build Careers.<br>Achieve Success.</h1>
+        <p>
+            SkillCraft helps learners and professionals access structured
+            roadmaps, quick-reference cheatsheets, and comprehensive
+            job preparation resources in one brutalist platform.
+        </p>
+        <div class="hero-buttons">
+            <a href="#roadmaps" class="btn primary">Explore Roadmaps</a>
+            <a href="#about" class="btn secondary">Start Learning</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Hero Illustration">
+    </div>
+</section>
+
+<!-- ABOUT FEATURES -->
+<section id="about" class="section">
+    <div class="section-title">
+        <h2>Why SkillCraft?</h2>
+        <p>Everything you need to learn, practice and get hired.</p>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🗺️</div>
+            <h3>Learning Roadmaps</h3>
+            <p>Structured learning paths for every technology.</p>
+        </div>
+        <div class="feature-card">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">📄</div>
+            <h3>Quick Cheatsheets</h3>
+            <p>Fast references for concepts and syntax.</p>
+        </div>
+        <div class="feature-card">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">💼</div>
+            <h3>Interview Prep</h3>
+            <p>Practice questions and hiring strategies.</p>
+        </div>
+        <div class="feature-card">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">📈</div>
+            <h3>Career Growth</h3>
+            <p>Build confidence and advance your career.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ROADMAPS -->
+<section id="roadmaps" class="section">
+    <div class="section-title">
+        <h2>Learning Roadmaps</h2><br>
+        <p>Structured paths to master your domain.</p>
+    </div>
+    <div class="grid" id="roadmapGrid">
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Frontend Development</h3>
+            <p>Learn HTML, CSS, JS, and React to build beautiful UIs.</p>
+            <a href="frontend.html" class="card-btn">View Roadmap</a>
+        </div>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Backend Development</h3>
+            <p>Master Node.js, Python, or Java to power web applications.</p>
+            <a href="#backend" class="card-btn">View Roadmap</a>
+        </div>
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Full Stack Development</h3>
+            <p>Combine frontend and backend skills to build end-to-end apps.</p>
+            <a href="#fullstack" class="card-btn">View Roadmap</a>
+        </div>
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Data Structures</h3>
+            <p>Master arrays, trees, graphs, and dynamic programming.</p>
+            <a href="#dsa" class="card-btn">View Roadmap</a>
+        </div>
+    </div>
+</section>
+
+<!-- CHEATSHEETS -->
+<section id="cheatsheets" class="section">
+    <div class="section-title">
+        <h2>Quick Cheatsheets</h2><br>
+        <p>Fast references for syntax and commands.</p>
+    </div>
+    <div class="grid" id="cheatsheetGrid">
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>HTML & CSS</h3>
+            <p>Quick reference for semantic tags and CSS properties.</p>
+            <a href="htmlcheetsheet.html" class="card-btn">View Guide</a>
+        </div>
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>ES6 features, array methods, and DOM manipulation.</p>
+            <a href="#javascript" class="card-btn">View Guide</a>
+        </div>
+        <div class="card">
+            <div class="icon">⚛️</div>
+            <h3>React</h3>
+            <p>Hooks, state management, and component lifecycles.</p>
+            <a href="#react" class="card-btn">View Guide</a>
+        </div>
+        <div class="card">
+            <div class="icon">🐙</div>
+            <h3>Git & GitHub</h3>
+            <p>Essential commands for version control and collaboration.</p>
+            <a href="#git" class="card-btn">View Guide</a>
+        </div>
+    </div>
+</section>
+
+<!-- JOB PREP -->
+<section id="jobprep" class="section">
+    <div class="section-title">
+        <h2>Job Preparation Hub</h2><br>
+        <p>Resources to ace your next interview.</p>
+    </div>
+    <div class="grid" id="jobGrid">
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>Resume Building</h3>
+            <p>Craft an ATS-friendly resume that stands out to recruiters.</p>
+            <a href="resume.html" class="card-btn">Explore</a>
+        </div>
+        <div class="card">
+            <div class="icon">🏗️</div>
+            <h3>System Design</h3>
+            <p>Learn how to architect scalable and reliable systems.</p>
+            <a href="#system-design" class="card-btn">Explore</a>
+        </div>
+        <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Mock Interviews</h3>
+            <p>Practice technical and behavioral interview questions.</p>
+            <a href="#mock-interviews" class="card-btn">Explore</a>
+        </div>
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>Salary Negotiation</h3>
+            <p>Strategies to negotiate the best compensation package.</p>
+            <a href="#salary" class="card-btn">Explore</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT WEBSITE SECTION -->
+<section id="about-website" class="section about-website">
+    <div class="section-title">
+        <h2>About SkillCraft</h2>
+        <p>Learn more about our mission.</p>
+    </div>
+    <div class="about-content">
+        <h3>Empowering Developers Worldwide</h3>
+        <p>SkillCraft is an open-source initiative aimed at democratizing tech education. We believe that structured learning should be accessible to everyone, regardless of their background.</p>
+        <br>
+        <p>Our resources are curated by industry experts and constantly updated to reflect the latest trends in software engineering, data science, and UI/UX design. Whether you are a beginner taking your first steps or an experienced developer preparing for your next big interview, SkillCraft has got you covered.</p>
+        <br>
+        <p>Join our community of over 50,000+ learners and start building your dream career today.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> contact@skillcraft.com</p>
+        <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +91 XXXXX XXXXX</p>
+        <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> India</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="FULL NAME" required>
+        <input type="email" placeholder="EMAIL ADDRESS" required>
+        <input type="text" placeholder="SUBJECT" required>
+        <textarea rows="6" placeholder="YOUR MESSAGE..." required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>🚀 SkillCraft</h3>
+            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; background: var(--card-bg); padding: 10px; border: var(--border-width) solid var(--border-color); box-shadow: 3px 3px 0px var(--shadow-color);">
+                Structured roadmaps, cheatsheets, and career preparation resources designed in Neubrutalism style.
+            </p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/thecodecraft.dev" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#roadmaps">Roadmaps</a></li>
+                <li><a href="#cheatsheets">Cheatsheets</a></li>
+                <li><a href="#jobprep">Job Prep</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="https://venkatesh0963.github.io/codecraft-website/">Code Craft</a></li>
+                <li><a href="https://venkatesh0963.github.io/ui-craft/">Ui craft</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>Instagram</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 SkillCraft. All Rights Reserved. | Privacy Policy | Terms of Service | Cookie Policy
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+// Contact Form Alert
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Message Sent Successfully! 🚀");
+});
+
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('i');
+
+themeToggle.addEventListener('click', () => {
+    if (html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        html.setAttribute('data-theme', 'light');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'flex';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+</body>
+</html>

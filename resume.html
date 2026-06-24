@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn how to build a professional, ATS-friendly resume step-by-step. Discover simple explanations for contact info, experience, projects, and skills to land your dream tech job.">
+<meta name="keywords" content="Resume Builder, Resume Guide, ATS Friendly Resume, Tech Resume, How to write a resume, Resume tips, Job Prep, SkillCraft">
+<meta name="author" content="SkillCraft">
+<title>Ultimate Resume Builder Guide 2026 - Craft an ATS-Friendly Resume | SkillCraft</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --bg-color: #fdfbf7;
+    --text-color: #0f172a;
+    --primary-color: #ff90e8;
+    --secondary-color: #ffc900;
+    --tertiary-color: #23a094;
+    --card-bg: #ffffff;
+    --border-color: #0f172a;
+    --border-width: 3px;
+    --shadow-offset: 5px;
+    --shadow-color: #0f172a;
+    --dot-color: rgba(15, 23, 42, 0.15);
+    --transition: all 0.2s ease-in-out;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1b26;
+    --text-color: #e0e0e0;
+    --primary-color: #bb66a8;
+    --secondary-color: #bfa31b;
+    --tertiary-color: #196f66;
+    --card-bg: #24283b;
+    --border-color: #e0e0e0;
+    --shadow-color: #e0e0e0;
+    --dot-color: rgba(224, 224, 224, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
+    background-size: 25px 25px;
+    background-position: 0 0;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--bg-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    transition: background 0.3s;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: #0f172a;
+    border-color: #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+}
+
+#themeToggle {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: var(--transition);
+}
+
+#themeToggle:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+/* Sections */
+.section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0;
+    background-color: transparent;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h1, .section-title h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    background: var(--primary-color);
+    color: #0f172a;
+    padding: 15px 30px;
+    border: var(--border-width) solid #0f172a;
+    box-shadow: 8px 8px 0px #0f172a;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px #ffffff;
+}
+.section-title h2 {
+    font-size: 2.8rem;
+    background: var(--secondary-color);
+}
+.section-title p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--card-bg);
+    display: inline-block;
+    padding: 8px 15px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--shadow-color);
+}
+
+
+
+/* Guide Container */
+.guide-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+}
+
+.guide-card {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    padding: 40px;
+    transition: var(--transition);
+}
+
+.guide-card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: var(--border-width) solid #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: #0f172a;
+}
+
+.guide-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.guide-desc {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.guide-content {
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    padding: 25px;
+    box-shadow: inset 3px 3px 0px rgba(0,0,0,0.05);
+}
+
+.guide-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guide-content li {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.guide-content li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.guide-content strong {
+    color: var(--text-color);
+    background: var(--secondary-color);
+    padding: 2px 6px;
+    border: 2px solid var(--border-color);
+    display: inline-block;
+    margin-right: 5px;
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+[data-theme="dark"] .guide-content strong {
+    color: #0f172a;
+}
+
+/* Features Grid (For Related Content) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    transition: var(--transition);
+    text-align: center;
+}
+.feature-card:hover {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+.feature-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--secondary-color);
+}
+.feature-card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.feature-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #0f172a;
+    padding: 10px 20px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+.feature-link:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    padding: 80px 8% 40px;
+    border-top: var(--border-width) solid var(--border-color);
+    margin-top: 120px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+.footer-grid h3, .footer-grid h4 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+.footer-grid ul {
+    list-style: none;
+}
+.footer-grid li {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.footer-grid li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s;
+    background: var(--card-bg);
+    padding: 2px 8px;
+    border: 2px solid transparent;
+}
+.footer-grid li a:hover {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    box-shadow: 4px 4px 0px #0f172a;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.social-icons a:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: var(--border-width) solid var(--border-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--card-bg);
+    padding: 20px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+/* Scroll Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: #0f172a;
+    border: 3px solid #0f172a;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px #0f172a;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.2s;
+}
+#scrollTopBtn:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px #0f172a;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .section {
+        margin: 80px auto;
+    }
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .guide-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        border-bottom: var(--border-width) solid var(--border-color);
+        padding: 20px 0;
+        box-shadow: 0 10px 0 var(--shadow-color);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .section {
+        margin: 60px auto;
+    }
+    .section-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="skillcraft_neubrutalism.html" class="logo">
+        🚀 SkillCraft
+    </a>
+
+    <div class="nav-right">
+        <nav class="nav-links">
+            <a href="skillcraft_neubrutalism.html#home">Home</a>
+            <a href="skillcraft_neubrutalism.html#roadmaps">Roadmaps</a>
+            <a href="skillcraft_neubrutalism.html#cheatsheets">Cheatsheets</a>
+            <a href="skillcraft_neubrutalism.html#jobprep">Job Prep</a>
+            <a href="skillcraft_neubrutalism.html#about-website">About</a>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <section class="section">
+        <div class="section-title">
+            <h1>Resume Building Guide</h1>
+            <p>Master the art of crafting an ATS-friendly resume that lands interviews.</p>
+        </div>
+
+
+
+        <div class="guide-container">
+            
+            <!-- Step 1 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #a78bfa;">📞</div>
+                    <h2>1. Contact Information</h2>
+                </div>
+                <p class="guide-desc">The very top of your resume should make it effortless for recruiters to reach you.</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Must Include:</strong> Full Name, Professional Email, and a reliable Phone Number.</li>
+                        <li><strong>Links:</strong> Always include your LinkedIn URL and a link to your GitHub or personal Portfolio. Make sure the URLs are clickable.</li>
+                        <li><strong>Pro Tip:</strong> You do NOT need your full physical address. Listing your City and State (e.g., "San Francisco, CA") is perfectly fine and saves space.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #fb923c;">⭐</div>
+                    <h2>2. Professional Summary</h2>
+                </div>
+                <p class="guide-desc">A brief 2-3 sentence elevator pitch summarizing your career and top strengths.</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Keep it brief:</strong> Avoid massive paragraphs. Hook the reader immediately. Recruiters spend an average of 6 seconds skimming a resume.</li>
+                        <li><strong>Focus on value:</strong> Highlight what you bring to the company, not just what you want out of the job.</li>
+                        <li><strong>Include keywords:</strong> Mention your primary job title and core tech stack directly in the summary (e.g., "Detail-oriented Frontend Developer specializing in React and TypeScript").</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- Step 3 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #4ade80;">💼</div>
+                    <h2>3. Work Experience</h2>
+                </div>
+                <p class="guide-desc">The core of your resume. Prove your impact using the XYZ formula.</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Reverse Chronological:</strong> List your most recent job first.</li>
+                        <li><strong>The XYZ Formula:</strong> "Accomplished [X] as measured by [Y], by doing [Z]". Focus on measurable impact rather than just listing job duties.</li>
+                        <li><strong>Action Verbs:</strong> Start every bullet point with a strong action verb (e.g., <em>Developed</em>, <em>Optimized</em>, <em>Architected</em>, <em>Led</em>).</li>
+                        <li><strong>Metrics Matter:</strong> Use numbers wherever possible. Did you improve load times by 20%? Did you serve 10,000 users? State it clearly!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #60a5fa;">🚀</div>
+                    <h2>4. Projects</h2>
+                </div>
+                <p class="guide-desc">Crucial for entry-level developers or those transitioning careers.</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Quality over Quantity:</strong> List 2 to 3 of your best, most complex projects rather than 10 simple tutorials.</li>
+                        <li><strong>Tech Stack:</strong> Clearly list the technologies, frameworks, and databases you used to build the project.</li>
+                        <li><strong>Problem Solving:</strong> Explain the problem the project solved and your specific role in building it. Provide links to the live demo and the GitHub repository.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #f472b6;">🛠️</div>
+                    <h2>5. Skills Section</h2>
+                </div>
+                <p class="guide-desc">Tailor this section heavily to pass Applicant Tracking Systems (ATS).</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Group Logically:</strong> Categorize your skills (e.g., <em>Languages:</em> JavaScript, Python | <em>Frameworks:</em> React, Node.js | <em>Tools:</em> Git, Docker).</li>
+                        <li><strong>Mirror the Job Description:</strong> If the job posting asks for specific tools that you know, ensure those exact words appear in your skills section.</li>
+                        <li><strong>Hard Skills Focus:</strong> Dedicate this section primarily to technical hard skills. Soft skills (like "Teamwork") are better demonstrated through your Work Experience bullet points.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="guide-card">
+                <div class="guide-header">
+                    <div class="icon-box" style="background: #2dd4bf;">🎓</div>
+                    <h2>6. Education & Certifications</h2>
+                </div>
+                <p class="guide-desc">Keep it concise unless you are a very recent graduate.</p>
+                <div class="guide-content">
+                    <ul>
+                        <li><strong>Basics:</strong> List your Degree, University/College Name, and Graduation Year.</li>
+                        <li><strong>GPA:</strong> Only include your GPA if it is exceptionally high (e.g., 3.5+) and you graduated recently.</li>
+                        <li><strong>Certifications:</strong> Include relevant industry certifications (e.g., AWS Certified Developer, Meta Front-End Developer Professional Certificate).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RELATED CONTENT (SEO) -->
+    <section class="section" id="related-content">
+        <div class="section-title">
+            <h2>Related Content</h2>
+            <p>More resources to help you land your dream job.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div style="font-size: 3.5rem; margin-bottom: 15px;">💬</div>
+                <h3>Interview Prep Guide</h3>
+                <p>Master behavioral questions and whiteboard coding challenges.</p>
+                <a href="#" class="feature-link" style="background: #ffc900;">Read Guide</a>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 3.5rem; margin-bottom: 15px;">📝</div>
+                <h3>Cover Letter Tips</h3>
+                <p>Learn how to write a compelling cover letter that complements your resume.</p>
+                <a href="#" class="feature-link" style="background: #23a094;">Read Guide</a>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 3.5rem; margin-bottom: 15px;">👔</div>
+                <h3>Portfolio Building</h3>
+                <p>Showcase your projects in a way that makes recruiters want to hire you.</p>
+                <a href="#" class="feature-link" style="background: #ff90e8;">Read Guide</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>🚀 SkillCraft</h3>
+            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; background: var(--card-bg); padding: 10px; border: var(--border-width) solid var(--border-color); box-shadow: 3px 3px 0px var(--shadow-color);">
+                Structured roadmaps, cheatsheets, and career preparation resources designed in Neubrutalism style.
+            </p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/thecodecraft.dev" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="skillcraft_neubrutalism.html#home">Home</a></li>
+                <li><a href="skillcraft_neubrutalism.html#roadmaps">Roadmaps</a></li>
+                <li><a href="skillcraft_neubrutalism.html#cheatsheets">Cheatsheets</a></li>
+                <li><a href="skillcraft_neubrutalism.html#jobprep">Job Prep</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="https://venkatesh0963.github.io/codecraft-website/">Code Craft</a></li>
+                <li><a href="https://venkatesh0963.github.io/ui-craft/">Ui craft</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>Instagram</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 SkillCraft. All Rights Reserved. | Privacy Policy | Terms of Service | Cookie Policy
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('i');
+
+themeToggle.addEventListener('click', () => {
+    if (html.getAttribute('data-theme') === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        html.setAttribute('data-theme', 'light');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'flex';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+</body>
+</html>
