@@ -2,7 +2,7 @@
 
 SkillCraft is a modern, responsive web platform offering structured **Roadmaps, Cheatsheets, and Career Preparation Resources** for developers. The entire project is styled using a vibrant **Neubrutalism** (Neo-Brutalism) design system, featuring bold borders, hard box shadows, and dynamic color palettes.
 
-## ✨ Features
+## ✨ Features.
 
 - **🎨 Neubrutalism Aesthetic**: High-contrast borders, solid shadows, and a unique dotted background pattern.
 - **🌓 Dark/Light Mode**: Seamless theme toggling with CSS variables.
